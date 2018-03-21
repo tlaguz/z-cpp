@@ -16,7 +16,7 @@ int main(){
   std::cout<<"c3*c4= "<<c3*c4<<" "<<std::endl;
   std::cout<<"c3/c4= "<<c3/c4<<" "<<std::endl;
 
-  //zespolona<int> c5; // odkomentowanie tej linii powoduje błąd kompilacji
+  //Zespolona<int> c5; // odkomentowanie tej linii powoduje błąd kompilacji
 
   return main2();
 }

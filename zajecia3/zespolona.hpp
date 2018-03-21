@@ -18,6 +18,7 @@ class Zespolona {
         void _init(T a, T b) {
             _dane = std::tuple<T,T>(a, b);
         }
+
     public:
         Zespolona() : Zespolona(0,0) {}
 
@@ -33,6 +34,8 @@ class Zespolona {
                 default: throw std::invalid_argument("list");
             }
         }
+
+        virtual ~Zespolona() = default;
 
         T GetReal() const {
             return std::get<0>(_dane);
@@ -77,6 +80,18 @@ class Zespolona {
             return Zespolona((a.GetReal()*b.GetReal()+a.GetImaginary()*b.GetImaginary())/denominator,
                              (a.GetImaginary()*b.GetReal()-a.GetReal()*b.GetImaginary())/denominator);
         }
+};
+
+template<>
+Zespolona<float>::~Zespolona() = default;
+
+template<>
+Zespolona<double>::~Zespolona() = default;
+
+template<>
+class Zespolona<int> {
+    public:
+        virtual ~Zespolona() = 0;
 };
 
 
