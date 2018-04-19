@@ -5,6 +5,14 @@
 #include <iterator>
 #include <cmath>
 
+/*
+ * Można użyć Static Assertion
+ * Można zrobić klasę bazową, nieabstrakcyjną i ogólną,
+ * a Zespoloną abstrakcyjną i specjalizować ją do konkretnych typów i dziedziczyć.
+ * Wtedy nie bedzie problemu z przeciążaniem +-*\/
+ * Patrz też: std::enable_if
+ */
+
 template<typename T>
 class Zespolona {
     private:
@@ -87,6 +95,9 @@ Zespolona<float>::~Zespolona() = default;
 
 template<>
 Zespolona<double>::~Zespolona() = default;
+
+template<>
+Zespolona<long double>::~Zespolona() = default;
 
 template<>
 class Zespolona<int> {
