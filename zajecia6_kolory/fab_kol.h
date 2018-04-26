@@ -5,7 +5,7 @@ using std::string;
 class ExceptionUnknownColorPolicy{
     protected:
         Kolor handleUnknownColor(string s) {
-            throw "Nieznany kolor";
+            throw std::invalid_argument("Unknown color");
         }
 };
 

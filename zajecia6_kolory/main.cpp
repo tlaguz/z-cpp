@@ -32,8 +32,8 @@ int main()
     try {
         cout << "zielony - " << fabryka.zwrocKolor("zielony") << '\n';
         cout << "green - " << fabryka.zwrocKolor("green") << '\n';
-    } catch(...) {
-        cout << "Zlapano wyjatek.\n";
+    } catch(std::invalid_argument &e) {
+        cout << "Zlapano wyjatek: " << e.what() << ".\n";
     }
 
     cout << "MojaPolityka:" << endl;
